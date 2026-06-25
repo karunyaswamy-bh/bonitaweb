@@ -11,13 +11,13 @@ export default function Home() {
       id: 'bridal-heritage',
       name: 'Bridal Heritage',
       desc: 'Heavy gold border silk sarees handcrafted for brides.',
-      image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600'
+      image: '/images/bridal_collection.png'
     },
     {
       id: 'festive-elegance',
       name: 'Festive Elegance',
       desc: 'Breathable tissue, organza, and fine handloom georgette.',
-      image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600'
+      image: '/images/festive_collection.png'
     }
   ];
 
@@ -34,7 +34,7 @@ export default function Home() {
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={settings.heroImageUrl || "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1600"} 
+            src={settings.heroImageUrl || "/images/hero_saree.png"} 
             alt="Premium Saree Silk Weave Texture" 
             className="w-full h-full object-cover opacity-40 scale-105 transform transition-transform duration-[2000ms]"
           />
@@ -128,14 +128,14 @@ export default function Home() {
               <div className="aspect-[4/5] rounded-md overflow-hidden shadow-premium-hover relative">
                 <div className="absolute inset-0 border border-black/5 z-10 rounded-md pointer-events-none"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800" 
+                  src="/images/about_saree_main.png" 
                   alt="Draped Silk Saree Close Up" 
                   className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
                 />
               </div>
               <div className="absolute -bottom-8 -left-8 w-[55%] aspect-square rounded-md overflow-hidden border-8 border-[#FCFBF7] shadow-2xl hidden sm:block animate-float">
                 <img 
-                  src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500" 
+                  src="/images/about_saree_detail.png" 
                   alt="Fine Embroidered Organza Details" 
                   className="w-full h-full object-cover"
                 />

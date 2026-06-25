@@ -4,7 +4,7 @@ import { Sparkles } from 'lucide-react';
 
 export default function ProductCard({ product }) {
   const { id, name, fabric, price, images, availability, collection } = product;
-  const coverImage = images && images.length > 0 ? images[0] : 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600';
+  const coverImage = images && images.length > 0 ? images[0] : '/images/hero_saree.png';
 
   return (
     <div className="group flex flex-col bg-white border border-neutral-charcoal/5 shadow-premium hover:shadow-premium-hover transition-all duration-500 rounded-sm overflow-hidden hover:-translate-y-1">

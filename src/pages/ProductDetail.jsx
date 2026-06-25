@@ -115,7 +115,7 @@ export default function ProductDetail() {
 
   const imagesList = product.images && product.images.length > 0 
     ? product.images 
-    : ['https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200'];
+    : ['/images/hero_saree.png'];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

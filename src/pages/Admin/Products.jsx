@@ -124,7 +124,7 @@ export default function Products() {
                 {filteredList.map((product) => {
                   const cover = product.images && product.images.length > 0
                     ? product.images[0]
-                    : 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=100';
+                    : '/images/hero_saree.png';
 
                   return (
                     <tr key={product.id} className="hover:bg-neutral-50/40">
