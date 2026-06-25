@@ -1,0 +1,107 @@
+[
+  {
+    "id": "1",
+    "name": "Kanjeevaram Bridal Silk",
+    "price": 25000,
+    "fabric": "Kanchipuram Silk",
+    "collection": "Bridal Heritage",
+    "description": "A magnificent Kanjeevaram silk saree with intricate gold zari work, perfect for weddings and grand occasions.",
+    "careInstructions": "Dry clean only. Store in a cool, dry place.",
+    "images": [
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200",
+      "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1200"
+    ],
+    "weave": "Pure Handloom Zari Weave",
+    "colour": "Royal Crimson Red & Gold",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782046400 }
+  },
+  {
+    "id": "2",
+    "name": "Emerald Green Chiffon",
+    "price": 8500,
+    "fabric": "Georgette",
+    "collection": "Festive Elegance",
+    "description": "Lightweight and flowy georgette saree in a rich emerald green, featuring subtle sequin borders for elegant evening wear.",
+    "careInstructions": "Hand wash gently with mild detergent.",
+    "images": [
+      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=1200",
+      "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1200"
+    ],
+    "weave": "Sequin Border Work",
+    "colour": "Emerald Green",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782046300 }
+  },
+  {
+    "id": "3",
+    "name": "Banarasi Ivory Gold",
+    "price": 18000,
+    "fabric": "Banarasi Silk",
+    "collection": "Bridal Heritage",
+    "description": "Exquisite Banarasi silk in soft ivory with all-over golden motifs, offering a timeless and regal look.",
+    "careInstructions": "Dry clean only. Iron on low heat.",
+    "images": [
+      "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1200",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200"
+    ],
+    "weave": "Handcrafted Banarasi Brocade",
+    "colour": "Soft Ivory & Gold Zari Weave",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782046200 }
+  },
+  {
+    "id": "4",
+    "name": "Midnight Blue Silk Georgette",
+    "price": 12000,
+    "fabric": "Georgette",
+    "collection": "Bridal Heritage",
+    "description": "A fusion of silk and georgette with silver embroidery, draping beautifully for an effortlessly chic bridal party look.",
+    "careInstructions": "Dry clean recommended.",
+    "images": [
+      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=1200"
+    ],
+    "weave": "Silver Zari Embroidery",
+    "colour": "Midnight Blue & Silver",
+    "availability": true,
+    "featured": false,
+    "createdAt": { "seconds": 1782046100 }
+  },
+  {
+    "id": "5",
+    "name": "Classic Golden Mysore Silk",
+    "price": 16500,
+    "fabric": "Kanchipuram Silk",
+    "collection": "Bridal Heritage",
+    "description": "Pure Mysore silk known for its minimalistic grace and solid gold sheen, a staple for traditional wardrobes.",
+    "careInstructions": "Dry clean only.",
+    "images": [
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200"
+    ],
+    "weave": "Handloom Solid Silk Weave",
+    "colour": "Mustard Zari Gold",
+    "availability": true,
+    "featured": false,
+    "createdAt": { "seconds": 1782046000 }
+  },
+  {
+    "id": "6",
+    "name": "Sage Pastel Organza Zardosi Saree",
+    "price": 18500,
+    "fabric": "Organza",
+    "collection": "Festive Elegance",
+    "description": "An elegant sage green organza saree with delicate hand-embroidered Zardosi floral borders, perfect for summer morning weddings and receptions.",
+    "careInstructions": "Dry clean only. Do not iron directly on embroidery.",
+    "images": [
+      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=1200"
+    ],
+    "weave": "Handcrafted Zardosi",
+    "colour": "Sage Green & Silver Zari",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782045900 }
+  }
+]

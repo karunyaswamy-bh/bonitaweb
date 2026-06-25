@@ -1,0 +1,257 @@
+[
+  {
+    "id": "1",
+    "name": "Kanjeevaram Bridal Silk",
+    "price": 25000,
+    "fabric": "Kanchipuram Silk",
+    "collection": "Bridal Heritage",
+    "description": "A magnificent Kanjeevaram silk saree with intricate gold zari work, perfect for weddings and grand occasions.",
+    "careInstructions": "Dry clean only. Store in a cool, dry place.",
+    "images": [
+      "/images/kanjeevaram_crimson.png"
+    ],
+    "weave": "Pure Handloom Zari Weave",
+    "colour": "Royal Crimson Red & Gold",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782046400 }
+  },
+  {
+    "id": "2",
+    "name": "Emerald Green Chiffon",
+    "price": 8500,
+    "fabric": "Georgette",
+    "collection": "Festive Elegance",
+    "description": "Lightweight and flowy georgette saree in a rich emerald green, featuring subtle sequin borders for elegant evening wear.",
+    "careInstructions": "Hand wash gently with mild detergent.",
+    "images": [
+      "/images/emerald_green_chiffon.png"
+    ],
+    "weave": "Sequin Border Work",
+    "colour": "Emerald Green",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782046300 }
+  },
+  {
+    "id": "3",
+    "name": "Banarasi Ivory Gold",
+    "price": 18000,
+    "fabric": "Banarasi Silk",
+    "collection": "Bridal Heritage",
+    "description": "Exquisite Banarasi silk in soft ivory with all-over golden motifs, offering a timeless and regal look.",
+    "careInstructions": "Dry clean only. Iron on low heat.",
+    "images": [
+      "/images/banarasi_ivory_gold.png"
+    ],
+    "weave": "Handcrafted Banarasi Brocade",
+    "colour": "Soft Ivory & Gold Zari Weave",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782046200 }
+  },
+  {
+    "id": "4",
+    "name": "Midnight Blue Silk Georgette",
+    "price": 12000,
+    "fabric": "Georgette",
+    "collection": "Bridal Heritage",
+    "description": "A fusion of silk and georgette with silver embroidery, draping beautifully for an effortlessly chic bridal party look.",
+    "careInstructions": "Dry clean recommended.",
+    "images": [
+      "/images/midnight_blue_silk.png"
+    ],
+    "weave": "Silver Zari Embroidery",
+    "colour": "Midnight Blue & Silver",
+    "availability": true,
+    "featured": false,
+    "createdAt": { "seconds": 1782046100 }
+  },
+  {
+    "id": "5",
+    "name": "Classic Golden Mysore Silk",
+    "price": 16500,
+    "fabric": "Kanchipuram Silk",
+    "collection": "Bridal Heritage",
+    "description": "Pure Mysore silk known for its minimalistic grace and solid gold sheen, a staple for traditional wardrobes.",
+    "careInstructions": "Dry clean only.",
+    "images": [
+      "/images/mysore_silk_gold.png"
+    ],
+    "weave": "Handloom Solid Silk Weave",
+    "colour": "Mustard Zari Gold",
+    "availability": true,
+    "featured": false,
+    "createdAt": { "seconds": 1782046000 }
+  },
+  {
+    "id": "6",
+    "name": "Sage Pastel Organza Zardosi Saree",
+    "price": 18500,
+    "fabric": "Organza",
+    "collection": "Festive Elegance",
+    "description": "An elegant sage green organza saree with delicate hand-embroidered Zardosi floral borders, perfect for summer morning weddings and receptions.",
+    "careInstructions": "Dry clean only. Do not iron directly on embroidery.",
+    "images": [
+      "/images/sage_green_organza.png"
+    ],
+    "weave": "Handcrafted Zardosi",
+    "colour": "Sage Green & Silver Zari",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782045900 }
+  },
+  {
+    "id": "7",
+    "name": "Pochampally Ikat Silk",
+    "price": 14500,
+    "fabric": "Pochampally Ikat",
+    "collection": "Festive Elegance",
+    "description": "A striking Pochampally Ikat silk saree with traditional geometric patterns and a solid contrast zari border, handloomed in Telangana.",
+    "careInstructions": "Dry clean only. Store wrapped in soft muslin cloth.",
+    "images": [
+      "/images/pochampally_ikat.png"
+    ],
+    "weave": "Double Ikat Handloom Weave",
+    "colour": "Magenta & Mustard Yellow",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782045800 }
+  },
+  {
+    "id": "8",
+    "name": "Kashmiri Tilla Crimson Silk",
+    "price": 22000,
+    "fabric": "Kashmiri Silk",
+    "collection": "Bridal Heritage",
+    "description": "Luxurious crepe silk saree featuring exquisite hand-embroidered Kashmiri Tilla work in antique copper and gold metallic threads.",
+    "careInstructions": "Dry clean only. Delicate zardozi/tilla handling required.",
+    "images": [
+      "/images/kashmiri_tilla.png"
+    ],
+    "weave": "Handcrafted Tilla Embroidery",
+    "colour": "Deep Burgundy & Gold",
+    "availability": true,
+    "featured": false,
+    "createdAt": { "seconds": 1782045700 }
+  },
+  {
+    "id": "9",
+    "name": "Chanderi Cotton Silk Pastel",
+    "price": 9500,
+    "fabric": "Chanderi Silk",
+    "collection": "Festive Elegance",
+    "description": "A summer-friendly, light-weight Chanderi cotton-silk saree with elegant silver buttis and a translucent, sheer finish.",
+    "careInstructions": "Gentle hand wash or dry clean.",
+    "images": [
+      "/images/chanderi_pink.png"
+    ],
+    "weave": "Traditional Chanderi Boota Weave",
+    "colour": "Peach Pink & Silver Zari",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782045600 }
+  },
+  {
+    "id": "10",
+    "name": "Patola Double Ikat Heritage",
+    "price": 35000,
+    "fabric": "Patola Silk",
+    "collection": "Bridal Heritage",
+    "description": "An elite Patan Patola double ikat silk saree featuring classic parrot, elephant, and geometric grid motifs, woven to last generations.",
+    "careInstructions": "Dry clean only. Store flat, do not hang.",
+    "images": [
+      "/images/patan_patola.png"
+    ],
+    "weave": "Double Ikat Patan Weave",
+    "colour": "Crimson Red & Emerald Green",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782045500 }
+  },
+  {
+    "id": "11",
+    "name": "Gadwal Zari Silk Saree",
+    "price": 12500,
+    "fabric": "Gadwal Silk",
+    "collection": "Festive Elegance",
+    "description": "Traditional Gadwal handloom saree featuring a pure cotton body for comfort and a rich teal blue silk border and pallu adorned with fine gold zari work.",
+    "careInstructions": "Dry clean recommended to maintain silk borders.",
+    "images": [
+      "/images/gadwal_silk.png"
+    ],
+    "weave": "Traditional Gadwal Handloom",
+    "colour": "Mustard Yellow & Teal Blue",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782045400 }
+  },
+  {
+    "id": "12",
+    "name": "Bandhani Gota Patti Saree",
+    "price": 10500,
+    "fabric": "Georgette",
+    "collection": "Festive Elegance",
+    "description": "Stunning tie-dyed Rajasthani Bandhani saree in maroon red, featuring hand-embroidered golden Gota Patti border work, ideal for festival nights.",
+    "careInstructions": "Dry clean only to preserve Gota Patti threadwork.",
+    "images": [
+      "/images/bandhani_gota.png"
+    ],
+    "weave": "Hand-Dyed Bandhani with Gota Patti",
+    "colour": "Maroon Red & Gold",
+    "availability": true,
+    "featured": false,
+    "createdAt": { "seconds": 1782045300 }
+  },
+  {
+    "id": "13",
+    "name": "Jamdani Muslin Cotton Saree",
+    "price": 13500,
+    "fabric": "Organza",
+    "collection": "Festive Elegance",
+    "description": "Ultra-fine hand-woven Jamdani muslin saree featuring delicate gold floral bootis woven directly into the fabric, sheer and elegant summer style.",
+    "careInstructions": "Dry clean only. Handle with extreme care.",
+    "images": [
+      "/images/jamdani_muslin.png"
+    ],
+    "weave": "Handwoven Dhakai Jamdani",
+    "colour": "Pastel Mint & Gold",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782045200 }
+  },
+  {
+    "id": "14",
+    "name": "Baluchari Heritage Silk Saree",
+    "price": 21500,
+    "fabric": "Baluchari Silk",
+    "collection": "Bridal Heritage",
+    "description": "Pure Baluchari silk saree from West Bengal, featuring elaborate mythological story scenes woven into the borders and pallu in antique gold zari threads.",
+    "careInstructions": "Dry clean only. Store in breathable muslin bags.",
+    "images": [
+      "/images/baluchari_violet.png"
+    ],
+    "weave": "Baluchari Figural Weave",
+    "colour": "Deep Violet & Antique Gold",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782045100 }
+  },
+  {
+    "id": "15",
+    "name": "Kalamkari Hand-Painted Saree",
+    "price": 15500,
+    "fabric": "Tussar Silk",
+    "collection": "Festive Elegance",
+    "description": "Hand-painted Tussar silk saree showcasing beautiful traditional Kalamkari mythological stories and floral art in natural vegetable dyes, done by master artists.",
+    "careInstructions": "Dry clean only. Protect from dampness.",
+    "images": [
+      "/images/kalamkari_tussar.png"
+    ],
+    "weave": "Hand-Painted Pen Kalamkari",
+    "colour": "Natural Beige & Multi-colour",
+    "availability": true,
+    "featured": true,
+    "createdAt": { "seconds": 1782045000 }
+  }
+]
