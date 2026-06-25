@@ -14,7 +14,7 @@ const initialDefaultSettings = {
   heroSubtitle: 'Handloomed Royalty',
   heroTitle: 'Embody the Grace of Fine Silk Heritage',
   heroDescription: 'Welcome to Bonita Ropita. Explore our hand-woven bridal and festive saree creations directly from master weavers across India, curated exclusively in Hyderabad.',
-  heroImageUrl: '/images/hero_saree.png',
+  heroImageUrl: '/images/banarasi_ivory_gold.png',
   storySubtitle: 'Our Heritage',
   storyTitle: 'The Story of Bonita Ropita',
   storyParagraph1: 'Located in the heart of Jubilee Hills, Hyderabad, Bonita Ropita has been sourcing the finest pure silk sarees for generations. Every thread represents the heartbeat of an Indian artisan.',

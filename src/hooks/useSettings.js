@@ -11,7 +11,7 @@ const initialDefaultSettings = {
   heroSubtitle: 'Handloomed Royalty',
   heroTitle: 'Embody the Grace of Fine Silk Heritage',
   heroDescription: 'Welcome to Bonita Ropita. Explore our hand-woven bridal and festive saree creations directly from master weavers across India, curated exclusively in Hyderabad.',
-  heroImageUrl: '/images/hero_saree.png',
+  heroImageUrl: '/images/banarasi_ivory_gold.png',
   storySubtitle: 'Our Heritage',
   storyTitle: 'The Story of Bonita Ropita',
   storyParagraph1: 'Located in the heart of Jubilee Hills, Hyderabad, Bonita Ropita has been sourcing the finest pure silk sarees for generations. Every thread represents the heartbeat of an Indian artisan.',
@@ -31,7 +31,16 @@ export function useSettings() {
       if (stored) {
         try {
           const parsed = JSON.parse(stored);
-          setSettings(prev => ({ ...prev, ...parsed, whatsappNumber: '8297672855' }));
+          let finalSettings = { ...parsed };
+          
+          // Force update old Unsplash URLs or cached hero_saree.png
+          if (finalSettings.heroImageUrl && finalSettings.heroImageUrl.includes('unsplash.com')) {
+            finalSettings.heroImageUrl = '/images/banarasi_ivory_gold.png';
+          } else if (finalSettings.heroImageUrl === '/images/hero_saree.png') {
+            finalSettings.heroImageUrl = '/images/banarasi_ivory_gold.png';
+          }
+          
+          setSettings(prev => ({ ...prev, ...finalSettings, whatsappNumber: '8297672855' }));
         } catch (e) {
           console.error("Failed to parse settings", e);
         }

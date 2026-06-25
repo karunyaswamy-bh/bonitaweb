@@ -34,7 +34,7 @@ export default function Home() {
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={settings.heroImageUrl || "/images/hero_saree.png"} 
+            src={settings.heroImageUrl || "/images/banarasi_ivory_gold.png"} 
             alt="Premium Saree Silk Weave Texture" 
             className="w-full h-full object-cover opacity-40 scale-105 transform transition-transform duration-[2000ms]"
           />
