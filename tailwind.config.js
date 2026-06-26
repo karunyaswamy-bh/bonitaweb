@@ -8,32 +8,33 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#6B1D2F', // Royal Silk Maroon
-          hover: '#521422',
-          light: '#F8EEF0',
+          DEFAULT: '#571b26', // Deep Royal Burgundy
+          hover: '#3a0e16',
+          light: '#f5e8ea',
         },
         accent: {
-          DEFAULT: '#D4AF37', // Vintage Zari Gold
-          hover: '#B5942B',
-          light: '#FAF6E6',
+          DEFAULT: '#d4af37', // Champagne Gold
+          hover: '#b59223',
+          light: '#fbf8f0',
         },
         secondary: {
-          DEFAULT: '#1E4E54', // Deep Teal Accent
-          light: '#EBF4F5',
+          DEFAULT: '#907e71', // Warm Beige
+          light: '#f4f1ed',
         },
         neutral: {
-          cream: '#FCFBF7',
-          charcoal: '#2C2523',
-          muted: '#706461',
+          cream: '#fdfcf8', // Ivory White
+          charcoal: '#1a1716', // Deep Charcoal
+          muted: '#857d7b',
         }
       },
       fontFamily: {
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        serif: ['Cormorant Garamond', 'Playfair Display', 'Georgia', 'serif'],
         sans: ['Inter', 'sans-serif'],
       },
       boxShadow: {
-        'premium': '0 4px 20px -2px rgba(107, 29, 47, 0.08)',
-        'premium-hover': '0 10px 25px -3px rgba(107, 29, 47, 0.15)',
+        'premium': '0 10px 40px -10px rgba(26, 23, 22, 0.1)',
+        'premium-hover': '0 20px 50px -15px rgba(26, 23, 22, 0.15)',
+        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.05)',
       }
     },
   },

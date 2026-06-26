@@ -11,10 +11,14 @@ export default function FloatingWhatsApp() {
   return (
     <button
       onClick={handleGeneralInquiry}
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center animate-bounce hover:animate-none"
+      className="fixed bottom-8 right-8 z-50 group flex items-center justify-center w-14 h-14 bg-neutral-charcoal text-accent border border-accent/30 rounded-full shadow-premium hover:shadow-premium-hover transition-all duration-500 hover:scale-105 active:scale-95"
       aria-label="Contact via WhatsApp"
     >
-      <MessageCircle size={28} className="fill-current" />
+      <div className="absolute inset-0 rounded-full bg-accent opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+      <MessageCircle size={26} strokeWidth={1.5} className="group-hover:text-accent-light transition-colors duration-500" />
+      
+      {/* Pulse effect rings */}
+      <span className="absolute -inset-1 rounded-full border border-accent/20 animate-ping opacity-75 duration-[3000ms]"></span>
     </button>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { collection, getDocs, limit, orderBy, query, onSnapshot } from 'firebase/firestore';
+import { collection, getDocs, limit, orderBy, query, onSnapshot, doc, setDoc, addDoc } from 'firebase/firestore';
 import { db } from '../firebase/config';
-import { Scissors, MessageSquare, AlertTriangle, Eye, ArrowRight, UserCheck } from 'lucide-react';
+import { Scissors, MessageSquare, AlertTriangle, Eye, ArrowRight, UserCheck, Settings, Sparkles } from 'lucide-react';
 import localProducts from '../data/products.json';
 
 const mockInquiries = [
@@ -22,7 +22,119 @@ export default function Dashboard() {
   });
   const [recentInquiries, setRecentInquiries] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [seeding, setSeeding] = useState(false);
+  const [seedSuccess, setSeedSuccess] = useState(false);
   const navigate = useNavigate();
+
+  const handleSeedDatabase = async () => {
+    setSeeding(true);
+    try {
+      const collectionsData = [
+        { id: 'bridal-heritage', name: 'Bridal Heritage', description: 'Traditional heavy zari border silk sarees for brides', imageUrl: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800' },
+        { id: 'festive-elegance', name: 'Festive Elegance', description: 'Lightweight rich tissue and organza sarees', imageUrl: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800' }
+      ];
+
+      const productsData = [
+        {
+          name: "Golden Crimson Kanchipuram Saree",
+          fabric: "Kanchipuram Silk",
+          collection: "Bridal Heritage",
+          price: 26500,
+          availability: true,
+          images: [
+            "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200",
+            "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1200"
+          ],
+          description: "Woven by master weavers of Tamil Nadu, this bridal masterpiece boasts a crimson red hue with heavy pure gold zari weave depicting traditional peacock motifs.",
+          weave: "Pure Handloom Zari Weave",
+          colour: "Crimson Red & Antique Gold",
+          careInstructions: "Dry Clean Only. Storage wrapped in soft muslin cloth.",
+          createdAt: new Date(),
+          featured: true
+        },
+        {
+          name: "Sage Pastel Organza Zardosi Saree",
+          fabric: "Organza",
+          collection: "Festive Elegance",
+          price: 18500,
+          availability: true,
+          images: [
+            "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=1200"
+          ],
+          description: "An elegant sage green organza saree with delicate hand-embroidered Zardosi floral borders, perfect for summer morning weddings and receptions.",
+          weave: "Handcrafted Zardosi",
+          colour: "Sage Green & Silver Zari",
+          careInstructions: "Dry Clean Only. Do not iron directly on hand embroidery.",
+          createdAt: new Date(),
+          featured: true
+        },
+        {
+          name: "Midnight Blue Banarasi Silk Saree",
+          fabric: "Banarasi Silk",
+          collection: "Bridal Heritage",
+          price: 32000,
+          availability: true,
+          images: [
+            "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1200"
+          ],
+          description: "A rich midnight blue pure Banarasi silk saree adorned with intricate floral jaal pattern in gold zari. Standard 5.5 meters length with run-along blouse piece.",
+          weave: "Handcrafted Banarasi Brocade",
+          colour: "Midnight Blue & Gold Zari",
+          careInstructions: "Dry Clean Only. Avoid direct sprays of perfumes on zari threads.",
+          createdAt: new Date(),
+          featured: false
+        },
+        {
+          name: "Scarlet Crimson Georgette Saree",
+          fabric: "Georgette",
+          collection: "Festive Elegance",
+          price: 15500,
+          availability: true,
+          images: [
+            "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200"
+          ],
+          description: "Perfect drape Georgette saree featuring intricate hand-done Gota Patti borders and delicate bootis across the body.",
+          weave: "Gota Patti Handwork",
+          colour: "Scarlet Red & Gold Gota",
+          careInstructions: "Dry Clean Only.",
+          createdAt: new Date(),
+          featured: false
+        }
+      ];
+
+      const initialDefaultSettings = {
+        phone: '+91 98765 43210',
+        email: 'inquire@bonitaropita.com',
+        address: 'Plot 45, Jubilee Hills, Road No. 10, Hyderabad, Telangana, 500033',
+        whatsappNumber: '919876543210',
+        logoUrl: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=200'
+      };
+
+      // Seed collections
+      for (const c of collectionsData) {
+        await setDoc(doc(db, 'collections', c.id), c);
+      }
+
+      // Seed products
+      for (const p of productsData) {
+        await addDoc(collection(db, 'products'), p);
+      }
+
+      // Seed boutique settings
+      await setDoc(doc(db, 'settings', 'boutique'), {
+        ...initialDefaultSettings,
+        updatedAt: new Date()
+      });
+
+      setSeedSuccess(true);
+      setTimeout(() => setSeedSuccess(false), 5000);
+    } catch (err) {
+      console.error("Seeding failed:", err);
+      alert("Seeding failed: " + err.message);
+    } finally {
+      setSeeding(false);
+    }
+  };
 
   useEffect(() => {
     const isPlaceholder = import.meta.env.VITE_FIREBASE_API_KEY === 'placeholder_api_key' || !import.meta.env.VITE_FIREBASE_API_KEY;
@@ -131,6 +243,35 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-8">
+      {/* Seeding Warning Banner */}
+      {stats.totalProducts === 0 && import.meta.env.VITE_FIREBASE_API_KEY !== 'placeholder_api_key' && (
+        <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded shadow-premium flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div className="flex gap-3">
+            <Sparkles className="text-amber-600 shrink-0 mt-0.5" size={24} />
+            <div>
+              <h4 className="text-amber-800 font-serif font-semibold text-base">Empty Firestore Database Detected</h4>
+              <p className="text-amber-700 text-sm mt-1">
+                Your live Firebase Firestore database is currently empty. Seed it with the default collections, products, and contact settings to make the store fully functional.
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={handleSeedDatabase}
+            disabled={seeding}
+            className="shrink-0 bg-amber-600 hover:bg-amber-700 text-white font-semibold px-5 py-2.5 rounded text-xs uppercase tracking-wider transition-all duration-300 shadow disabled:opacity-50 flex items-center gap-2"
+          >
+            {seeding ? 'Seeding...' : 'Seed Default Data'}
+          </button>
+        </div>
+      )}
+
+      {seedSuccess && (
+        <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded shadow text-green-700 text-sm flex items-center gap-2">
+          <Sparkles className="text-green-600" size={18} />
+          <span>Success! Luxury collections and products have been seeded successfully to your Firestore database.</span>
+        </div>
+      )}
+
       {/* Stats Summary row */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
         {statCards.map((card, idx) => {

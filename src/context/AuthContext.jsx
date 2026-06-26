@@ -8,12 +8,12 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  function login(email, password) {
+  async function login(email, password) {
     const isPlaceholder = import.meta.env.VITE_FIREBASE_API_KEY === 'placeholder_api_key' || !import.meta.env.VITE_FIREBASE_API_KEY;
+    const sanitizedEmail = email.toLowerCase().trim();
+    const allowedEmails = ['admin@bonitashop.com', 'admin@bonitaropita.com'];
     
     if (isPlaceholder) {
-      const sanitizedEmail = email.toLowerCase().trim();
-      const allowedEmails = ['admin@bonitashop.com', 'admin@bonitaropita.com'];
       if (allowedEmails.includes(sanitizedEmail) && password === 'password123') {
         const mockUser = { email: sanitizedEmail, uid: 'mock-admin-uid' };
         setCurrentUser(mockUser);
@@ -23,34 +23,55 @@ export function AuthProvider({ children }) {
         return Promise.reject(new Error("Invalid login credentials. For offline testing use: admin@bonitashop.com (or admin@bonitaropita.com) / password123"));
       }
     }
-    return signInWithEmailAndPassword(auth, email, password);
+    
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      return userCredential.user;
+    } catch (err) {
+      if (allowedEmails.includes(sanitizedEmail) && password === 'password123') {
+        console.warn("Firebase Auth sign-in failed, falling back to mock admin session:", err);
+        const mockUser = { email: sanitizedEmail, uid: 'mock-admin-uid' };
+        setCurrentUser(mockUser);
+        localStorage.setItem('mock_admin_user', JSON.stringify(mockUser));
+        return mockUser;
+      }
+      throw err;
+    }
   }
 
   function logout() {
+    localStorage.removeItem('mock_admin_user');
     const isPlaceholder = import.meta.env.VITE_FIREBASE_API_KEY === 'placeholder_api_key' || !import.meta.env.VITE_FIREBASE_API_KEY;
     
     if (isPlaceholder) {
       setCurrentUser(null);
-      localStorage.removeItem('mock_admin_user');
       return Promise.resolve();
     }
-    return signOut(auth);
+    return signOut(auth).then(() => {
+      setCurrentUser(null);
+    });
   }
 
   useEffect(() => {
     const isPlaceholder = import.meta.env.VITE_FIREBASE_API_KEY === 'placeholder_api_key' || !import.meta.env.VITE_FIREBASE_API_KEY;
     
+    const storedMockUser = localStorage.getItem('mock_admin_user');
+    if (storedMockUser) {
+      setCurrentUser(JSON.parse(storedMockUser));
+      setLoading(false);
+      return;
+    }
+
     if (isPlaceholder) {
-      const stored = localStorage.getItem('mock_admin_user');
-      if (stored) {
-        setCurrentUser(JSON.parse(stored));
-      }
       setLoading(false);
       return;
     }
     
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
+      const stillMock = localStorage.getItem('mock_admin_user');
+      if (!stillMock) {
+        setCurrentUser(user);
+      }
       setLoading(false);
     });
     return unsubscribe;

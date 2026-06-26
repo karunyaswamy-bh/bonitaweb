@@ -91,7 +91,7 @@ export default function ProductDetail() {
 
   if (loading) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-24 flex justify-center items-center">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-40 pb-24 flex justify-center items-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
       </div>
     );
@@ -99,10 +99,10 @@ export default function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-24 text-center">
-        <ShieldAlert className="mx-auto text-primary" size={48} />
-        <h2 className="text-2xl mt-4 font-serif">Saree Not Found</h2>
-        <Link to="/catalogue" className="text-primary underline mt-2 block">Return to Catalogue</Link>
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-40 pb-24 text-center">
+        <ShieldAlert className="mx-auto text-primary" size={48} strokeWidth={1.5} />
+        <h2 className="text-2xl md:text-3xl mt-6 font-serif text-primary">Saree Not Found</h2>
+        <Link to="/catalogue" className="text-accent underline underline-offset-4 mt-4 inline-block font-semibold uppercase tracking-wider text-xs">Return to Catalogue</Link>
       </div>
     );
   }
@@ -118,7 +118,7 @@ export default function ProductDetail() {
     : ['/images/hero_saree.png'];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-24">
       <div className="flex items-center gap-3 mb-8 text-sm font-medium">
         <Link to="/" className="inline-flex items-center gap-1.5 text-neutral-muted hover:text-primary transition-colors duration-300">
           <Home size={16} /> Home
